@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Smart Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- 🌗 Light/Dark Mode Toggle with Label -->
+  <div class="mode-label" id="mode-label">Dark Mode</div>
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <div class="card">
+    <!-- 🔍 City Search -->
+    <div class="search">
+      <div class="input-wrapper">
+        <input type="text" id="city-input" placeholder="Enter city name" spellcheck="false" autocomplete="off" />
+        <ul class="suggestions" id="suggestions"></ul>
+      </div>
+      <button><img src="search.png" alt="Search" /></button>
+    </div>
+
+    <!-- ⚠️ Error -->
+    <div class="error">
+      <p>Invalid City name</p>
+    </div>
+
+    <!-- 🌤️ Weather Info -->
+    <div class="weather">
+      <img src="rain.png" class="weather-icon" alt="Weather Icon" />
+      <h1 class="temp">--°C</h1>
+      <h2 class="city">--</h2>
+
+      <div class="details">
+        <div class="col">
+          <img src="humidity.png" alt="Humidity" />
+          <div>
+            <p class="humidity">50%</p>
+            <p>Humidity</p>
+          </div>
+        </div>
+        <div class="col">
+          <img src="wind.png" alt="Wind" />
+          <div>
+            <p class="wind">15Km/H</p>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📅 5-Day Forecast -->
+      <div class="forecast" id="forecast">
+        <h3>5-Day Forecast</h3>
+        <div class="forecast-cards" id="forecast-cards"></div>
+        <!-- 📈 Temperature Chart -->
+        <div class="chart-card">
+          <canvas id="tempChart" height="100"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📍 Location Map in separate card -->
+  <div class="card map-card">
+    <h3>📍 Location Map</h3>
+    <div id="map"></div>
+  </div>
+
+  <!-- 📜 Script -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
