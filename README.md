@@ -15,7 +15,7 @@ A beautiful, interactive, and responsive weather web application that shows curr
 
 ## 🛠️ Technologies Used
 
-- HTML, CSS, JavaScript (Vanilla)
+- HTML, CSS, JavaScript
 - OpenWeatherMap API
 - Chart.js for graph
 - Leaflet.js for map
